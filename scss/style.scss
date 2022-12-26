@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+$white: #ffffff;
+$background1: #3a4663;
+$background2: #e6e6e6;
+$background3: #17062a;
+$window1: #181f33;
+$window2: #eeeeee;
+$window3: #1e0936;
+$buttonsArea1: #242d44;
+$buttonsArea2: #d2cdcd;
+$buttons1: #eae3dc;
+$buttons2: #e5e4e1;
+$buttons3: #331c4d;
+$resetDel1: #647198;
+$resetDel2: #378187;
+$resetDel3: #56077c;
+$equal1: #d03f2f;
+$equal2: #c85402;
+$equal3: #00ded0;
+$hoverResetDel1: #a2b2e1;
+$hoverResetDel2: #62b5bc;
+$hoverResetDel3: #8631af;
+$hoverButton3: #6c34ac;
+$hoverEqual1: #f96b5b;
+$hoverEqual2: #ff8a38;
+$hoverEqual3: #93fff8;
+$letter2: #36362c;
+$letter3: #ffe53d;
+$digit1: #434a59;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Spartan", sans-serif;
+  background: $background1;
+}
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin font($fontSize, $lineHeight, $letterSpacing, $color) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+  color: $color;
+  font-weight: 700;
+}
+/************
+header part
+*************/
+header {
+  width: 327px;
+  margin: 28px auto 0 auto;
+  @include flex(space-between, flex-end);
+  @media only screen and (min-width: 767px) {
+    width: 540px;
+    margin: 96px auto 0 auto;
+  }
+}
+.calc {
+  @include font(32px, 36px, -0.533333px, $white);
+}
+.headerTheme {
+  flex-basis: 144px;
+  display: flex;
+  @include flex(space-between, flex-end);
+  p {
+    @include font(12px, 13px, 1px, $white);
+    text-transform: uppercase;
+    padding-bottom: 5px;
+  }
+}
+.themeSwitch {
+  width: 71px;
+  p {
+    @include flex(space-around, flex-end);
+    @include font(12px, 13px, normal, $white);
+    width: 100%;
+    padding-bottom: 5px;
+  }
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 26px;
+  background: $buttonsArea1;
+  outline: none;
+  border-radius: 13px;
+  padding: 5px;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: $equal1;
+  cursor: pointer;
+}
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: $equal1;
+  cursor: pointer;
+}
+/************
+main part
+*************/
+main {
+  width: 327px;
+  margin: 32px auto 0 auto;
+  @media only screen and (min-width: 767px) {
+    width: 540px;
+    margin: 24px auto 50px auto;
+  }
+}
+/*
+.firstSection {
+  width: 100%;
+  background: $window1;
+  margin-bottom: 24px;
+  padding: 26px 24px;
+  border-radius: 10px;
+  @include font(32px, 36px, -0.533333px, $white);
+  
+  text-align: right;
+  @media only screen and (min-width: 767px) {
+    padding: 38px 32px 36px 32px;
+    @include font(48px, 54px, -0.8px, $white);
+    
+  }
+}
+*/
+.firstSection {
+  width: 100%;
+  background: #181f33;
+  margin-bottom: 24px;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: right;
+  //display: flex;
+  //justify-content: space-between;
+  //flex-direction: column;
+
+  @include flex(space-between, flex-end);
+  flex-direction: column;
+
+  height: auto;
+
+  #calculateDisplay {
+    @include font(12px, 12px, -0.8px, $white);
+    word-break: break-word;
+    @media only screen and (min-width: 767px) {
+      @include font(24px, 30px, -0.8px, $white);
+    }
+  }
+  #resultDisplay {
+    padding: 14px 0 0 0;
+    @include font(20px, 20px, -0.533333px, $white);
+    word-break: break-word;
+  }
+  @media only screen and (min-width: 767px) {
+    padding: 38px 32px 36px 32px;
+    @include font(24px, 30px, -0.8px, $white);
+  }
+}
+
+.secondSection {
+  width: 100%;
+  background: $buttonsArea1;
+  padding: 34px;
+  border-radius: 10px;
+  @media only screen and (min-width: 767px) {
+    padding: 32px;
+  }
+}
+.container {
+  display: grid;
+  grid-template-columns: 60px 60px 60px 60px;
+  grid-template-rows: 64px 64px 64px 64px 64px;
+  gap: 13px 13px;
+  grid-template-areas:
+    "seven eight nine del"
+    "four five six plus"
+    "one two three minus"
+    "dot zero slash x"
+    "reset reset equal equal";
+  @media only screen and (min-width: 767px) {
+    grid-template-columns: 101px 101px 101px 101px;
+    gap: 24px 25px;
+  }
+}
+.digit {
+  grid-area: digit;
+  background: $buttons1;
+  border-radius: 5px;
+  box-shadow: inset 0px -4px 0px #b3a497;
+  padding: 10px 10px 14px 10px;
+  &:hover {
+    background: $white;
+    cursor: pointer;
+  }
+  p {
+    width: 40px;
+    height: 40px;
+    @include font(28px, 31px, -0.47px, $digit1);
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+.del {
+  grid-area: del;
+  background: $resetDel1;
+  border-radius: 5px;
+  box-shadow: inset 0px -4px 0px #414e73;
+  padding: 9px 10px 15px 10px;
+  &:hover {
+    background: $hoverResetDel1;
+    cursor: pointer;
+  }
+  p {
+    width: 40px;
+    height: 40px;
+    @include font(16px, 18px, -0.27px, $white);
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+    padding-top: 12px;
+  }
+}
+.plus {
+  grid-area: plus;
+}
+.dot {
+  grid-area: dot;
+}
+.zero {
+  grid-area: zero;
+}
+.slash {
+  grid-area: slash;
+}
+.x {
+  grid-area: x;
+}
+.minus {
+  grid-area: minus;
+}
+.three {
+  grid-area: three;
+}
+.two {
+  grid-area: two;
+}
+.one {
+  grid-area: one;
+}
+.four {
+  grid-area: four;
+}
+.five {
+  grid-area: five;
+}
+.six {
+  grid-area: six;
+}
+.nine {
+  grid-area: nine;
+}
+.eight {
+  grid-area: eight;
+}
+.seven {
+  grid-area: seven;
+}
+.reset {
+  grid-area: reset;
+  background: $resetDel1;
+  border-radius: 5px;
+  box-shadow: inset 0px -4px 0px #414e73;
+  padding: 9px 22px 15px 22px;
+  &:hover {
+    background: $hoverResetDel1;
+    cursor: pointer;
+  }
+  p {
+    width: 88px;
+    height: 40px;
+    @include font(16px, 18px, -0.27px, $white);
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+    padding-top: 12px;
+  }
+}
+.equal {
+  grid-area: equal;
+  background: $equal1;
+  border-radius: 5px;
+  box-shadow: inset 0px -4px 0px #93261a;
+  padding: 9px 22px 15px 22px;
+  &:hover {
+    background: $hoverEqual1;
+    cursor: pointer;
+  }
+  p {
+    width: 88px;
+    height: 40px;
+    @include font(16px, 18px, -0.27px, $white);
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+    padding-top: 12px;
+  }
+}
+/*********
+light mode
+***********/
+body.js-light {
+  background: $background2;
+}
+.js-light .slider {
+  background: $buttonsArea2;
+}
+.slider::-webkit-slider-thumb {
+  background: $equal2;
+  &:hover {
+    background: $hoverEqual2;
+  }
+}
+.slider::-moz-range-thumb {
+  background: $equal2;
+  &:hover {
+    background: $hoverEqual2;
+  }
+}
+.js-light p {
+  color: $letter2;
+}
+.js-light #calculateDisplay {
+  color: $letter2;
+}
+.js-light #resultDisplay {
+  color: $letter2;
+}
+.js-light .firstSection {
+  background: $window2;
+}
+.js-light .secondSection {
+  background: $buttonsArea2;
+}
+.js-light .digit {
+  background: $buttons2;
+  p {
+    color: $letter2;
+  }
+}
+.js-light .reset,
+.js-light .del {
+  background: $resetDel2;
+  &:hover {
+    background: $hoverResetDel2;
+  }
+}
+.js-light .equal {
+  background: $equal2;
+  &:hover {
+    background: $hoverEqual2;
+  }
+}
+/************
+dark mode
+*************/
+
+body.js-dark {
+  background: $background3;
+}
+.js-dark .slider {
+  background: $window3;
+}
+.js-dark .slider::-webkit-slider-thumb {
+  background: $equal3;
+  &:hover {
+    background: $hoverEqual3;
+  }
+}
+.js-dark .slider::-moz-range-thumb {
+  background: $equal3;
+  &:hover {
+    background: $hoverEqual3;
+  }
+}
+.js-dark p {
+  color: $letter3;
+}
+.js-dark #firstSection {
+  background: $window3;
+}
+.js-dark .secondSection {
+  background: $window3;
+}
+.js-dark .digit {
+  background: $buttons3;
+  box-shadow: inset 0px -4px 0px #881c9e;
+  &:hover {
+    background: $hoverButton3;
+  }
+  p {
+    color: $letter3;
+  }
+}
+.js-dark .reset,
+.js-dark .del {
+  background: $resetDel3;
+  &:hover {
+    background: $hoverResetDel3;
+  }
+}
+.js-dark .equal {
+  background: $equal3;
+  box-shadow: inset 0px -4px 0px #6cf9f1;
+  &:hover {
+    background: $hoverEqual3;
+  }
+}

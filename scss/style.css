@@ -1,0 +1,600 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  background: #3a4663;
+}
+
+/************
+header part
+*************/
+header {
+  width: 327px;
+  margin: 28px auto 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+@media only screen and (min-width: 767px) {
+  header {
+    width: 540px;
+    margin: 96px auto 0 auto;
+  }
+}
+
+.calc {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: -0.53333px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.headerTheme {
+  -ms-flex-preferred-size: 144px;
+      flex-basis: 144px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.headerTheme p {
+  font-size: 12px;
+  line-height: 13px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+.themeSwitch {
+  width: 71px;
+}
+
+.themeSwitch p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 12px;
+  line-height: 13px;
+  letter-spacing: normal;
+  color: #ffffff;
+  font-weight: 700;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 26px;
+  background: #242d44;
+  outline: none;
+  border-radius: 13px;
+  padding: 5px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #d03f2f;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #d03f2f;
+  cursor: pointer;
+}
+
+/************
+main part
+*************/
+main {
+  width: 327px;
+  margin: 32px auto 0 auto;
+}
+
+@media only screen and (min-width: 767px) {
+  main {
+    width: 540px;
+    margin: 24px auto 50px auto;
+  }
+}
+
+/*
+.firstSection {
+  width: 100%;
+  background: $window1;
+  margin-bottom: 24px;
+  padding: 26px 24px;
+  border-radius: 10px;
+  @include font(32px, 36px, -0.533333px, $white);
+  
+  text-align: right;
+  @media only screen and (min-width: 767px) {
+    padding: 38px 32px 36px 32px;
+    @include font(48px, 54px, -0.8px, $white);
+    
+  }
+}
+*/
+.firstSection {
+  width: 100%;
+  background: #181f33;
+  margin-bottom: 24px;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+}
+
+.firstSection #calculateDisplay {
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.8px;
+  color: #ffffff;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+@media only screen and (min-width: 767px) {
+  .firstSection #calculateDisplay {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.8px;
+    color: #ffffff;
+    font-weight: 700;
+  }
+}
+
+.firstSection #resultDisplay {
+  padding: 14px 0 0 0;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.53333px;
+  color: #ffffff;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+@media only screen and (min-width: 767px) {
+  .firstSection {
+    padding: 38px 32px 36px 32px;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.8px;
+    color: #ffffff;
+    font-weight: 700;
+  }
+}
+
+.secondSection {
+  width: 100%;
+  background: #242d44;
+  padding: 34px;
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 767px) {
+  .secondSection {
+    padding: 32px;
+  }
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60px 60px 60px 60px;
+      grid-template-columns: 60px 60px 60px 60px;
+  -ms-grid-rows: 64px 64px 64px 64px 64px;
+      grid-template-rows: 64px 64px 64px 64px 64px;
+  gap: 13px 13px;
+      grid-template-areas: "seven eight nine del" "four five six plus" "one two three minus" "dot zero slash x" "reset reset equal equal";
+}
+
+@media only screen and (min-width: 767px) {
+  .container {
+    -ms-grid-columns: 101px 101px 101px 101px;
+        grid-template-columns: 101px 101px 101px 101px;
+    gap: 24px 25px;
+  }
+}
+
+.digit {
+  grid-area: digit;
+  background: #eae3dc;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px -4px 0px #b3a497;
+          box-shadow: inset 0px -4px 0px #b3a497;
+  padding: 10px 10px 14px 10px;
+}
+
+.digit:hover {
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.digit p {
+  width: 40px;
+  height: 40px;
+  font-size: 28px;
+  line-height: 31px;
+  letter-spacing: -0.47px;
+  color: #434a59;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.del {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: del;
+  background: #647198;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px -4px 0px #414e73;
+          box-shadow: inset 0px -4px 0px #414e73;
+  padding: 9px 10px 15px 10px;
+}
+
+.del:hover {
+  background: #a2b2e1;
+  cursor: pointer;
+}
+
+.del p {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.27px;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 auto;
+  text-transform: uppercase;
+  padding-top: 12px;
+}
+
+.plus {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: plus;
+}
+
+.dot {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: dot;
+}
+
+.zero {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: zero;
+}
+
+.slash {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: slash;
+}
+
+.x {
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+  grid-area: x;
+}
+
+.minus {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: minus;
+}
+
+.three {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: three;
+}
+
+.two {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: two;
+}
+
+.one {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: one;
+}
+
+.four {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: four;
+}
+
+.five {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: five;
+}
+
+.six {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: six;
+}
+
+.nine {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: nine;
+}
+
+.eight {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: eight;
+}
+
+.seven {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: seven;
+}
+
+.reset {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: reset;
+  background: #647198;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px -4px 0px #414e73;
+          box-shadow: inset 0px -4px 0px #414e73;
+  padding: 9px 22px 15px 22px;
+}
+
+.reset:hover {
+  background: #a2b2e1;
+  cursor: pointer;
+}
+
+.reset p {
+  width: 88px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.27px;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 auto;
+  text-transform: uppercase;
+  padding-top: 12px;
+}
+
+.equal {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: equal;
+  background: #d03f2f;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px -4px 0px #93261a;
+          box-shadow: inset 0px -4px 0px #93261a;
+  padding: 9px 22px 15px 22px;
+}
+
+.equal:hover {
+  background: #f96b5b;
+  cursor: pointer;
+}
+
+.equal p {
+  width: 88px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.27px;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 auto;
+  text-transform: uppercase;
+  padding-top: 12px;
+}
+
+/*********
+light mode
+***********/
+body.js-light {
+  background: #e6e6e6;
+}
+
+.js-light .slider {
+  background: #d2cdcd;
+}
+
+.slider::-webkit-slider-thumb {
+  background: #c85402;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #ff8a38;
+}
+
+.slider::-moz-range-thumb {
+  background: #c85402;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: #ff8a38;
+}
+
+.js-light p {
+  color: #36362c;
+}
+
+.js-light #calculateDisplay {
+  color: #36362c;
+}
+
+.js-light #resultDisplay {
+  color: #36362c;
+}
+
+.js-light .firstSection {
+  background: #eeeeee;
+}
+
+.js-light .secondSection {
+  background: #d2cdcd;
+}
+
+.js-light .digit {
+  background: #e5e4e1;
+}
+
+.js-light .digit p {
+  color: #36362c;
+}
+
+.js-light .reset,
+.js-light .del {
+  background: #378187;
+}
+
+.js-light .reset:hover,
+.js-light .del:hover {
+  background: #62b5bc;
+}
+
+.js-light .equal {
+  background: #c85402;
+}
+
+.js-light .equal:hover {
+  background: #ff8a38;
+}
+
+/************
+dark mode
+*************/
+body.js-dark {
+  background: #17062a;
+}
+
+.js-dark .slider {
+  background: #1e0936;
+}
+
+.js-dark .slider::-webkit-slider-thumb {
+  background: #00ded0;
+}
+
+.js-dark .slider::-webkit-slider-thumb:hover {
+  background: #93fff8;
+}
+
+.js-dark .slider::-moz-range-thumb {
+  background: #00ded0;
+}
+
+.js-dark .slider::-moz-range-thumb:hover {
+  background: #93fff8;
+}
+
+.js-dark p {
+  color: #ffe53d;
+}
+
+.js-dark #firstSection {
+  background: #1e0936;
+}
+
+.js-dark .secondSection {
+  background: #1e0936;
+}
+
+.js-dark .digit {
+  background: #331c4d;
+  -webkit-box-shadow: inset 0px -4px 0px #881c9e;
+          box-shadow: inset 0px -4px 0px #881c9e;
+}
+
+.js-dark .digit:hover {
+  background: #6c34ac;
+}
+
+.js-dark .digit p {
+  color: #ffe53d;
+}
+
+.js-dark .reset,
+.js-dark .del {
+  background: #56077c;
+}
+
+.js-dark .reset:hover,
+.js-dark .del:hover {
+  background: #8631af;
+}
+
+.js-dark .equal {
+  background: #00ded0;
+  -webkit-box-shadow: inset 0px -4px 0px #6cf9f1;
+          box-shadow: inset 0px -4px 0px #6cf9f1;
+}
+
+.js-dark .equal:hover {
+  background: #93fff8;
+}
+/*# sourceMappingURL=style.css.map */
