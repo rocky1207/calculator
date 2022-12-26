@@ -157,9 +157,7 @@ class Calculator {
       }
 
       result = this.compute(multiplicateArray);
-
       result = result.toString();
-
       workingArray.splice(index - 1, 3, result);
       this.resultOperand = result;
       this.computationArray = [];
@@ -169,9 +167,7 @@ class Calculator {
     this.updateDisplay();
   }
   compute(multiplicateArray) {
-    console.log(multiplicateArray);
     const num1 = parseFloat(multiplicateArray[0]);
-
     const operand = multiplicateArray[1];
     const num2 = parseFloat(multiplicateArray[2]);
 
@@ -179,16 +175,12 @@ class Calculator {
     switch (operand) {
       case "+":
         return num1 + num2;
-
       case "-":
         return num1 - num2;
-
       case "x":
         return num1 * num2;
-
       case "/":
         return num1 / num2;
-
       default:
         return;
     }
@@ -199,7 +191,6 @@ class Calculator {
       this.appendNumber(this.operation);
       this.allowOrNot(this.operation, false);
       this.allowOrNot(".", false);
-
       this.updateComputationArray(this.computeOperand);
       this.equals();
       this.temporaryOperand = "";
@@ -257,7 +248,7 @@ class Calculator {
       this.equals();
     }
   }
-  nesto() {
+  setUpComputeOperand() {
     this.computeOperand = "";
     this.updateDisplay();
   }
@@ -407,7 +398,7 @@ operationButtons.forEach((operation) => {
   });
 });
 equalsButton.addEventListener("click", () => {
-  calculator.nesto();
+  calculator.setUpComputeOperand();
 });
 deleteButton.addEventListener("click", () => {
   calculator.delete();

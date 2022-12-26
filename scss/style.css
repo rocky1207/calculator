@@ -132,23 +132,6 @@ main {
   }
 }
 
-/*
-.firstSection {
-  width: 100%;
-  background: $window1;
-  margin-bottom: 24px;
-  padding: 26px 24px;
-  border-radius: 10px;
-  @include font(32px, 36px, -0.533333px, $white);
-  
-  text-align: right;
-  @media only screen and (min-width: 767px) {
-    padding: 38px 32px 36px 32px;
-    @include font(48px, 54px, -0.8px, $white);
-    
-  }
-}
-*/
 .firstSection {
   width: 100%;
   background: #181f33;
